@@ -1,0 +1,34 @@
+ <!doctype html>
+<html>
+  <head>
+    <title>Fwitter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+<body>        
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <ul class="nav nav-pills" role="tablist">
+        <li role="presentation"><a href="/">Home <span></a></li>
+        <li role="presentation"><a href="/profile">Profile</a></li>
+        <li role="presentation" class="active"><a href="/messages">Messages <span></span></a></li>
+      </ul>
+      </div>
+    </nav>   
+
+<div class="container">
+  <% @tweets.each do |tweet| %> 
+    <h1><%=tweet.user%> - <%= tweet.message %></h1>
+    <%end%>
+    <form action="/tweets" method="POST">
+        User:  <input type="text" name="user" class="btn btn-default navbar-btn">
+        Message: <input type="text" name="message" class="btn btn-default navbar-btn">
+        <input type="submit" class="btn btn-default navbar-btn">
+    </form>
+      </div>
+    </a>
+</div>
+</body>
+</html>
