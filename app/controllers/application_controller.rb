@@ -20,10 +20,13 @@ class ApplicationController < Sinatra::Base
     get '/profile' do  		
   	erb :profile
   end 
+  get '/home' do  		
+  	erb :home
+  end 
 
-  post '/tweets' do
+  post '/messages' do
   	new_tweet = Tweet.new(params[:user],params[:message])
-  	redirect ('/')
+  	redirect ('/messages')
   end 
 
 end
