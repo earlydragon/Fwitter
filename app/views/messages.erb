@@ -20,13 +20,17 @@
 
 <div class="container">
   <% @tweets.each do |tweet| %> 
-    <h1><%=tweet.user%>: <%= tweet.message %></h1>
+    <h1><%=tweet.user.username%>: <%= tweet.message %></h1>
     <%end%>
+
     <form action="/messages" method="POST">
-        User:  <input type="text" name="user" class="btn btn-default navbar-btn">
-        Message: <input type="text" name="message" class="btn btn-default navbar-btn">
-        <input type="submit" class="btn btn-default navbar-btn">
-    </form>
+      <input type="hidden" name="user_id" value=<%=session[:user_id] %>>
+
+        Message: <input class="form-control" type="text" name="message">
+        <p>
+        </p>
+        <input type="submit" class="btn btn-default">
+      </form>
       </div>
     </a>
 </div>
